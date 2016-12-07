@@ -1,0 +1,63 @@
+<div class="type1-child-container">
+  <h2> Child Container </h2>
+
+  <h4> <u>Parent to Child Communication</u> </h4>
+  <div class="child-user-details">
+    <div>
+      <span class="child-user-details-title">
+        First Name: 
+      </span>
+      <span class="child-user-details-text">
+        {{ firstName }}
+      </span>
+    </div>
+    <div>
+      <span class="child-user-details-title">
+        Last Name: 
+      </span>
+      <span class="child-user-details-text">
+        {{ lastName }}
+      </span>
+    </div>
+    <div>
+      <span class="child-user-details-title">
+        City: 
+      </span>
+      <span class="child-user-details-text">
+        {{ city }}
+      </span>
+    </div>
+  </div>
+
+  <div class="child-to-parent">
+    <h4> <u>Child to Parent Communication</u> </h4>
+    <div>
+      <div class="form-group">
+        <label>
+          Age
+        </label>
+        <input type='text' class="form-control"
+          [(ngModel)]="age">
+      </div>
+      <div class="form-group">
+        <label>
+          Telephone Number
+        </label>
+        <input type='text' class="form-control"
+          [(ngModel)]="phoneNumber">
+      </div>
+      <div class="form-group">
+        <label>
+          Qualification
+        </label>
+        <input type='text' class="form-control"
+          [(ngModel)]="qualification">
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="sendDataFromC2P()">
+          Send Data
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
