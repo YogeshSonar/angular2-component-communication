@@ -9,3 +9,7 @@ h2{
 .parent-user-details-title{
     font-weight: 700;
 }
+
+.child-to-parent-heading{
+    margin-top: 50px;
+}
