@@ -1,0 +1,19 @@
+<div class="type3-parent-container">
+  <h3> Parent Component </h3>
+
+  <div class="parent-btn-group btn-group">
+    <button class="btn btn-primary" (click)="childComponent.increment()">
+      Increment
+    </button>
+    <button class="btn btn-default" (click)="childComponent.decrement()">
+      Decrement
+    </button>
+  </div>
+
+  <div class="parent-display-counter">
+    <h5 [innerText]="childComponent.message"></h5>
+    <h5 [innerText]="childComponent.counter"></h5>
+  </div>
+
+  <app-child #childComponent></app-child>
+</div>
