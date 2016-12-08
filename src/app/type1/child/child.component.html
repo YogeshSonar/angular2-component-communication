@@ -1,63 +1,66 @@
-<div class="type1-child-container">
-  <h2> Child Container </h2>
+<div class="type1-parent-container row">
+  <h1> <u>Using @Input() and @Output() decorators</u> </h1>
 
-  <h4> <u>Parent to Child Communication</u> </h4>
-  <div class="child-user-details">
+  <div class="type1-parent-to-child" class="col-sm-6 col-md-6">
+    <h2> Parent Container </h2>
+
+    <h4> <u>Parent to Child Communication</u> </h4>
+    <div class="form-group">
+      <label>
+        First Name
+      </label>
+      <input type='text' class="form-control"
+        [(ngModel)]="firstName">
+    </div>
+    <div class="form-group">
+      <label>
+        Last Name
+      </label>
+      <input type='text' class="form-control"
+        [(ngModel)]="lastName">
+    </div>
+    <div class="form-group">
+      <label>
+        City
+      </label>
+      <input type='text' class="form-control"
+        [(ngModel)]="city">
+    </div>
+
+    <h4 class="child-to-parent-heading"> <u>Child to Parent Communication</u> </h4>
+    
     <div>
-      <span class="child-user-details-title">
-        First Name: 
+      <span class="parent-user-details-title">
+        Age: 
       </span>
-      <span class="child-user-details-text">
-        {{ firstName }}
+      <span class="parent-user-details-text">
+        {{ age }}
       </span>
     </div>
     <div>
-      <span class="child-user-details-title">
-        Last Name: 
+      <span class="parent-user-details-title">
+        Telephone Number: 
       </span>
-      <span class="child-user-details-text">
-        {{ lastName }}
+      <span class="parent-user-details-text">
+        {{ phoneNumber }}
       </span>
     </div>
     <div>
-      <span class="child-user-details-title">
-        City: 
+      <span class="parent-user-details-title">
+        Qualification: 
       </span>
-      <span class="child-user-details-text">
-        {{ city }}
+      <span class="parent-user-details-text">
+        {{ qualification }}
       </span>
     </div>
   </div>
 
-  <div class="child-to-parent">
-    <h4> <u>Child to Parent Communication</u> </h4>
-    <div>
-      <div class="form-group">
-        <label>
-          Age
-        </label>
-        <input type='text' class="form-control"
-          [(ngModel)]="age">
-      </div>
-      <div class="form-group">
-        <label>
-          Telephone Number
-        </label>
-        <input type='text' class="form-control"
-          [(ngModel)]="phoneNumber">
-      </div>
-      <div class="form-group">
-        <label>
-          Qualification
-        </label>
-        <input type='text' class="form-control"
-          [(ngModel)]="qualification">
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" (click)="sendDataFromC2P()">
-          Send Data
-        </button>
-      </div>
-    </div>
-  </div>
+  <div class="type1-child-to-parent" class="col-sm-6 col-md-6">
+    <app-child
+      [firstName]="firstName"
+      [lastName]="lastName"
+      [city]="city"
+      (secondaryDetails)="getSecondaryDetails($event);">
+    </app-child>
+  </div>  
 </div>
